@@ -25,8 +25,8 @@ public class SecurityConfig {
         http
             .csrf().disable() // Disable CSRF for simplicity (not recommended for production)
             .authorizeRequests()
-            .requestMatchers("/", "/user/**", "/otp/**", "/home", "/login/**", "/css/**", "/js/**", "/images/**").permitAll() // Allow access to homepage and static resources
-            .anyRequest().authenticated() // Require authentication for all other endpoints
+            // Allow access to homepage and static resources
+            .anyRequest().permitAll() // Require authentication for all other endpoints
             .and()
             .formLogin().disable(); // Disable form-based login
         logger.debug("Security configuration completed");
