@@ -43,7 +43,7 @@ public class SecurityConfig {
     public CorsFilter corsFilter() {
         logger.debug("Configuring CORS filter");
         CorsConfiguration corsConfiguration = new CorsConfiguration();
-        corsConfiguration.addAllowedOrigin("*"); // Allow all origins temporarily
+        corsConfiguration.addAllowedOrigin("gitio-production.up.railway.app"); // Allow all origins temporarily
         corsConfiguration.addAllowedMethod("*");
         corsConfiguration.addAllowedHeader("*");
         corsConfiguration.setAllowCredentials(true);
